@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Tumblr_lab
 //
-//  Created by Imani P. on 3/13/18.
+//  Created by Collin S. on 3/13/18.
 //  Copyright © 2018 Collin Scott. All rights reserved.
 //
 
