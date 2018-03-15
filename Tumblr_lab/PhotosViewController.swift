@@ -79,6 +79,28 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! detailViewController
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        
+        let post = posts[indexPath.row]
+        // Configure YourCustomCell using the outlets that you've defined.
+        if let photos = post["photos"] as? [[String: Any]] {
+            // photos is NOT nil, we can use it!
+            // TODO: Get the photo url
+            // 1.
+            let photo = photos[0]
+            // 2.
+            let originalSize = photo["original_size"] as! [String: Any]
+            // 3.
+            let urlString1 = originalSize["url"] as! String
+            
+            vc.urlString = urlString1
+        }
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
